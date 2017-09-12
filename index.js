@@ -12,7 +12,7 @@ export default class RestClient {
   }
 
   _jsonToQueryString(json) {
-      return '?' + 
+      return '?' +
           Object.keys(json).map(function(key) {
               return encodeURIComponent(key) + '=' +
                   encodeURIComponent(json[key]);
@@ -35,7 +35,7 @@ export default class RestClient {
     if (!route) throw new Error('Route is undefined');
     var fullRoute = this._fullRoute(route);
     if (isQuery && body) {
-      const query = _jsonToQueryString(body);
+      const query = this._jsonToQueryString(body);
       fullRoute = `${fullRoute}?${query}`;
       body = undefined;
     }
