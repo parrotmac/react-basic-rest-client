@@ -1,5 +1,5 @@
 {
-  "name": "react-native-rest-client",
+  "name": "react-basic-rest-client",
   "version": "0.1.1",
   "description": "Your REST client for React made easy",
   "main": "index.js",

@@ -1,14 +1,11 @@
-# React Native REST Client
+# React basic REST Client
 
-[![npm version](https://badge.fury.io/js/react-native-rest-client.svg)](https://badge.fury.io/js/react-native-rest-client)
-[![js-semistandard-style](https://img.shields.io/badge/code%20style-semistandard-brightgreen.svg?style=flat-square)](https://github.com/Flet/semistandard)
-
-Simplify the RESTful calls of your React Native app.
+Simplify the RESTful calls of your React app.
 
 ## Instalation
 
 ```
-npm install --save react-native-rest-client
+npm install --save git+https://github.com/parrotmac/react-basic-rest-client
 ```
 
 ## Simple usage
@@ -16,12 +13,12 @@ npm install --save react-native-rest-client
 Create your own api client by extending the RestClient class
 
 ```javascript
-import RestClient from 'react-native-rest-client';
+import RestClient from 'react-basic-rest-client';
 
 export default class YourRestApi extends RestClient {
   constructor () {
     // Initialize with your base URL
-    super('https://api.myawesomeservice.com');
+    super('https://api.example.com');
   }
   // Now you can write your own methods easily
   login (username, password) {
@@ -50,11 +47,11 @@ api.login('johndoe', 'p4$$w0rd')
 ## Advanced usage
 
 ```javascript
-import RestClient from 'react-native-rest-client';
+import RestClient from 'react-basic-rest-client';
 
 export default class YourRestApi extends RestClient {
   constructor (authToken) {
-    super('https://api.myawesomeservice.com', {
+    super('https://api.example.com', {
       headers: {
         // Include as many custom headers as you need
         Authorization: `JWT ${authToken}`
@@ -118,12 +115,8 @@ Each one of these methods returns a Promise with the response as the parameter.
 
 * This library only supports JSON request and response bodies. If the response is not
 a JSON object, it will throw a JSON parse error.
-* It is labeled as _React Native_, even when it has no RN dependencies and could (in theory)
-be used in any JavaScript project. The reason behind this is that the stack used (ES6 and
-`fetch`) comes out of the box with React Native, and
-adding support for more platforms would require to add pre-compilers, polyfills and other
-tricks, which are completely out of the scope of this library. If you know what you're
-doing though, feel free to tweak your stack and use this library.
+
+* This is just a modified version of [https://github.com/javorosas/react-native-rest-client](https://github.com/javorosas/react-native-rest-client)
 
 ## License
 
